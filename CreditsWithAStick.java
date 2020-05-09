@@ -36,3 +36,14 @@ pm.addPacketListener(new PacketAdapter(this, ListenerPriority.NORMAL,
                 }
             }
         });
+
+
+//    This code allows you to send packets inside packet listeners. In this case, every time a player hits another with a stick, 
+//    the other player will get the credits message.
+//
+//    The runnable there makes it possible to send a packet inside a packet listener,
+//    if you dont have that console sends some "cant do that asynchrouasogfhly blablabla"
+//
+//    thanks to bingo who showed me how to make a runnable
+
+
