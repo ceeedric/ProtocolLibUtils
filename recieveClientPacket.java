@@ -13,3 +13,4 @@ try{
 // yes i know it is spelled wrong report that to dmulloy2 not me
 // This only works with .Client packets (cant send server packets to server lol)
 // PacketType.Play.Client.<packetname> <-- only packets like this will work (Status, legacy, login, and handshake might work but i didnt test)
+//
