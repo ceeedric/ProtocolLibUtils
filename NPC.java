@@ -35,3 +35,6 @@
         entity_head_rot.getBytes().write(0, (byte) (loc.getYaw() * 256 / 360));
         entity_head_rot.getIntegers().write(0, 1000);
 
+        pm.broadcastServerPacket(player_info_packet);
+        pm.broadcastServerPacket(spawn_packet);
+
