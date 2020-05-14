@@ -1,0 +1,29 @@
+public void getMethods(PacketContainer packet) {
+
+        // object 3 = entityModifier
+
+        Method[] methods = packet.getClass().getMethods();
+        for (Method m : methods) {
+
+            if (m.getParameterCount() != 0) continue;
+
+
+
+            Object o;
+
+            try {
+                o = m.invoke(packet);
+            } catch (FieldAccessException | IllegalAccessException | InvocationTargetException e) {
+                continue;
+            }
+
+
+            if (o instanceof StructureModifier<?>) {
+                StructureModifier<?> structureModifier = (StructureModifier<?>) o;
+                if (structureModifier.size() != 0) {
+                    System.out.println(structureModifier.getFieldType().getSimpleName() + " " + structureModifier.getFields().size());
+                }
+            }
+        }
+
+    }
