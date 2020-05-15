@@ -1,0 +1,29 @@
+// Since boss bar is very common, I will be writing this packet
+// I dont recommend doing it this way but it is possible
+// As you might have guessed it is sent to spawn the boss bar
+
+public static enum Action {
+        ADD, REMOVE, UPDATE_PCT, UPDATE_NAME, UPDATE_STYLE, UPDATE_PROPERTIES;
+    }
+
+// You need those enums in order to create BoosBar packet
+
+public static enum BarStyle {
+    PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20;
+}
+
+
+
+PacketContainer boss = new PacketContainer(PacketType.Play.Server.BOSS);
+boss.getUUIDs().write(0, UUID.randomUUID()); // For some reason it needs UUID, random works fine.
+boss.getFloat().write(0, 1F); // Float Health, if this is greater than one it will generate a second boss bar
+
+boss.getEnumModifier(Action.class, 1).write(0, Action.ADD); // Action to add the boss bar
+boss.getEnumModifier(BarColor.class, 4).write(0, BarColor.WHITE); // Boss bar color, make sure to import the enum created in this class
+boss.getEnumModifier(BarStyle.class, 5).write(0, BarStyle.PROGRESS); // Bar style, also an enum in this class
+
+boss.getChatComponents().write(0, WrappedChatComponent.fromText("Test")); // Title, if you want you can get creative and use runnables to make some animations
+
+boss.getBooleans().write(0, false); // Boolean setDarkenSky
+boss.getBooleans().write(1, false); // Boolean setPlayMusic
+boss.getBooleans().write(2, false); // Boolean setCreateFrog, no idea what this is
