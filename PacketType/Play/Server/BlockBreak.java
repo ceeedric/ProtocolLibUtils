@@ -6,8 +6,6 @@ block_break.getBlockData().read(0); // gets block
 block_break.getPlayerDigTypes().read(0); // returns Dig Type. check below
 block_break.getBooleans().read(0); // boolean getSuccessful
 
-System.out.println(block_break.getPlayerDigTypes().read(0));
-
 
 
 /*
