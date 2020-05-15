@@ -11,7 +11,7 @@ block_break.getBooleans().read(0); // boolean getSuccessful
 /*
 PlayerDigType is part of EnumWrappers
 
-Those values seem to be the only ones to be returned while 
+Those values seem to be the only ones to be returned
 EnumWrappers.PlayerDigType.START_DESTROY_BLOCK
 EnumWrappers.PlayerDigType.ABORT_DESTROY_BLOCK
 EnumWrappers.PlayerDigType.STOP_DESTROY_BLOCK
